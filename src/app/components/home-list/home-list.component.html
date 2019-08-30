@@ -1,0 +1,25 @@
+<p>home-list works!</p>
+<!--<input type="text" [(ngModel)]="hero.name" />
+<input type="text" [(ngModel)]="hero.description" />
+<input type="number" [(ngModel)]="hero.likes" /> -->
+
+<div class="row">
+    <div class="col">
+        <ul class="list-group">
+            <li *ngFor="let hero of heros; let index = index" class="list-group-item" (click)="selectHero(hero)"
+                [ngClass]="{
+                active: hero == selectedHero
+            }">
+                <span class="badge">{{ hero.likes }}</span>
+                <h3 class="id">{{ hero.id }}</h3>
+                {{ hero.name }}
+                <p class="id">{{ hero.description}} </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col">
+        <app-edit-hero *ngIf="selectedHero" [hero]="selectedHero" (llamada)="recibirEmit($event)">
+        </app-edit-hero>
+    </div>
+</div>

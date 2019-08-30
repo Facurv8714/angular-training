@@ -1,0 +1,22 @@
+<p>edit-hero2 works!</p>
+<h3 class="id">ID{{ hero.id }}</h3>
+
+<div class="form-group">
+    <label>Nombre</label>
+    <input type="text" class="form-control" [(ngModel)]="hero.name" /><br />
+</div>
+<div class="form-group">
+    <label>descripcion</label>
+    <input type="text" class="form-control" [(ngModel)]="hero.description" /><br />
+</div>
+<div class="form-group">
+    <label>Likes</label>
+    <input type="number" class="form-control" [(ngModel)]="hero.likes" />
+</div>
+
+<button type="button" class="btn btn-default" (click)="action(true)">
+    <i class="far fa-thumbs-down"></i>
+</button>
+<button class="btn btn-primary" (click)="Save()">
+    Save Hero
+</button>
